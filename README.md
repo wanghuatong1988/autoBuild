@@ -19,7 +19,7 @@ many //多页代码
 
 ### webpack4 共同配置(share)
 这里用到了最新的webpack4.0，它简化了很多配置，多线程输出，更快的构建能力，大大提高了开发的效率
-首页看下配置文件`config.js`
+首先看下配置文件`config.js`
 ```
 const path = require('path'),
     config = {
@@ -56,12 +56,12 @@ config.build.resourcesPath = path.join(config.build.outputPath, config.build.res
 
 module.exports = config;
 ```
-这里有开发环境下的接口代理，
-生产环境的目录名称和路径
-还有可选的是否转换页面字体为`rem`和`eslint`语法检测
-`eslint`校验是默认的规则校验
-它还有其它的[三种](https://blog.csdn.net/txl910514/article/details/76178988)通用规则
-可根据自身喜好去设置
+这里有开发环境下的接口代理，  
+生产环境的目录名称和路径  
+还有可选的是否转换页面字体为`rem`和`eslint`语法检测  
+`eslint`校验是默认的规则校验  
+它还有其它的[三种](https://blog.csdn.net/txl910514/article/details/76178988)通用规则  
+可根据自身喜好去设置  
 
 然后是`utils.js`工具方法
 ```
@@ -115,7 +115,7 @@ module.exports = {
     }
 }
 ```
-在来看在开发和生产共用的代码`webpack.base.conf.js`
+再来看在开发和生产共用的代码`webpack.base.conf.js`  
 首先看下一些基本的对`vue、css、js`这些loader的操作
 ```
 rules: [
@@ -215,10 +215,10 @@ if (!process.env.NODE_ENV) {
     )
 }
 ```
-在**生产环境**下原来是用`ExtractTextPlugin`插件现在都改成了`MiniCssExtractPlugin`
-for循环里面主要是把`vue、css、less、scss`的第一个数组`style-loader`覆盖成`MiniCssExtractPlugin`否则会有冲突，
-自动添加前缀的`postcss-loader`要放到最后面，这也是执行顺序的问题
-在项目最外层要增加一个`postcss.config.js`内容是
+在**生产环境**下原来是用`ExtractTextPlugin`插件现在都改成了`MiniCssExtractPlugin`  
+for循环里面主要是把`vue、css、less、scss`的第一个数组`style-loader`覆盖成`MiniCssExtractPlugin`否则会有冲突，  
+自动添加前缀的`postcss-loader`要放到最后面，这也是执行顺序的问题  
+在项目最外层要增加一个`postcss.config.js`内容是  
 ```
 module.exports = {
     plugins: [
@@ -322,9 +322,11 @@ webpack4.0新增了一个`mode为development/production`,两种模式在不同�
 ```
 ["webpack-hot-middleware/client?noInfo=true&reload=true"].concat("./src/index.js")
 ```
-后面的`noinfo`和`reload`是可配置的，如果想继续增加参数可往这里添加，[传送门](https://github.com/webpack-contrib/webpack-hot-middleware)
-然后开启热加载`devServer: { inline: true }`
-在`output`里的path路径我指向的是打包输出路径，webpack开发环境 是打包到内存的并不是真的打包，filename是给了个固定的`index.js`这个是要写到`html`里做为整个项目的入口，也就是说整个项目运行就靠这个`index.js`，在plugins里有一个`new Jarvis`这里的端口是1337，项目运行后可以打开这个端口来看下文件大小，项目运行是否出错等等, 这个可视化窗口功能还不错，适合有双屏的同学
+后面的`noinfo`和`reload`是可配置的，如果想继续增加参数可往这里添加，[传送门](https://github.com/webpack-contrib/webpack-hot-middleware)  
+然后开启热加载`devServer: { inline: true }`  
+在`output`里的path路径我指向的是打包输出路径，webpack开发环境 是打包到内存的并不是真的打包，filename是给了个固定的`index.js`  
+这个是要写到`html`里做为整个项目的入口，也就是说整个项目运行就靠这个`index.js`，  
+在plugins里有一个`new Jarvis`这里的端口是1337，项目运行后可以打开这个端口来看下文件大小，项目运行是否出错等等, 这个可视化窗口功能还不错，适合有双屏的同学
 
 接下来看下`webpack.prod.conf.js`
 ```
