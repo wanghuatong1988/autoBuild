@@ -5,7 +5,7 @@ single //单页代码
 share // 共用代码 
 many //多页代码
 ```
-只需要用到`批处理`对其中两者进行合并就能生成想要的单页或多页应用，提示需要安装国内的npm淘宝镜像
+只需要用到`批处理`对其中两者进行合并就能生成想要的单页或多页应用，提示需要安装国内的[npm淘宝镜像](http://npm.taobao.org/)  
 如果未安装的需要自行修改build.bat里的命令行`call cnpm install`为`call npm install`
 如下所示：  
 ![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/1.png)  
