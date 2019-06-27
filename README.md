@@ -7,15 +7,15 @@ many //多页代码
 ```
 只需要用到`批处理`对其中两者进行合并就能生成想要的单页或多页应用，提示需要安装国内的npm淘宝镜像
 如果未安装的需要自行修改build.bat里的命令行`call cnpm install`为`call npm install`
-如下所示：
-![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/1.png)
-先选择存放路径，输入项目名，选择要生成的是单页还是多页
-![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/2.png)
-这里以单页为示例，其实就是简单的对文件进行复制，复制完成后会自动安装依赖
-![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/3.png)
+如下所示：  
+![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/1.png)  
+先选择存放路径，输入项目名，选择要生成的是单页还是多页  
+![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/2.png)  
+这里以单页为示例，其实就是简单的对文件进行复制，复制完成后会自动安装依赖  
+![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/3.png)  
 安装完依赖后还会自动运行项目 如上开启的项目端口为8080
-目录如下
-![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/4.png)
+目录如下  
+![Markdown](https://github.com/wanghuatong1988/autoBuild/raw/master/4.png)  
 
 ### webpack4 共同配置(share)
 这里用到了最新的webpack4.0，它简化了很多配置，多线程输出，更快的构建能力，大大提高了开发的效率
