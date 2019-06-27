@@ -49,8 +49,8 @@ xcopy /s/e/h %~dp0single\build %url%\%name%\build
 xcopy %~dp0single %url%\%name%
 cd %url%\%name%
 echo '正在安装依赖包...'
-call npm install
-call npm run dev
+call cnpm install
+call cnpm run dev
 pause
 
 :start2
@@ -61,8 +61,8 @@ xcopy /s/e/h %~dp0many\build %url%\%name%\build
 xcopy %~dp0many %url%\%name%
 cd %url%\%name%
 echo '正在安装依赖包...'
-call npm install
-call npm run dev
+call cnpm install
+call cnpm run dev
 pause
 
 @exit
